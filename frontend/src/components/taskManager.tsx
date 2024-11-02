@@ -170,7 +170,6 @@ const TaskManager: React.FC = () => {
     
     try {
       await axios.delete(`${API_URL}/${id}`);
-      // If we're deleting a task that's currently being edited, clear the edit form
       if (editingTask && editingTask.id === id) {
         setEditingTask(null);
         setTitle("");
